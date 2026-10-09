@@ -7,7 +7,9 @@ return {
       "s1n7ax/nvim-window-picker",
     },
     keys = {
+      { "<C-e>", "<cmd>Neotree reveal<cr>", desc = "Reveal current file" },
       { "<leader>e", "<cmd>Neotree toggle<cr>", desc = "Toggle file explorer" },
+      { "<leader>E", "<cmd>Neotree reveal<cr>", desc = "Reveal current file" },
     },
     opts = {
       window = {

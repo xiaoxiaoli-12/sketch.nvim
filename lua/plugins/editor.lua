@@ -12,9 +12,7 @@ return {
       local function attach(bufnr, lang)
         if not vim.api.nvim_buf_is_valid(bufnr) then return end
         if vim.treesitter.language.get_lang(vim.bo[bufnr].filetype) ~= lang then return end
-        if pcall(vim.treesitter.start, bufnr, lang) and vim.treesitter.query.get(lang, "indents") then
-          vim.bo[bufnr].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
-        end
+        pcall(vim.treesitter.start, bufnr, lang)
       end
 
       vim.api.nvim_create_autocmd("FileType", {
@@ -76,13 +74,13 @@ return {
   {
     "akinsho/toggleterm.nvim",
     opts = {
-      open_mapping = [[<c-\>]],
+      open_mapping = { [[<C-/>]], [[<C-_>]] },
       direction = "float",
       float_opts = { border = "rounded" },
     },
     keys = {
-      { "<leader>th", "<cmd>ToggleTerm direction=horizontal<cr>", desc = "Terminal horizontal" },
-      { "<leader>tv", "<cmd>ToggleTerm direction=vertical<cr>", desc = "Terminal vertical" },
+      { "<C-/>", desc = "Toggle terminal" },
+      { "<C-_>", desc = "Toggle terminal" },
       { "<leader>tf", "<cmd>ToggleTerm direction=float<cr>", desc = "Terminal float" },
     },
   },

@@ -1,8 +1,10 @@
 return {
-  { "mfussenegger/nvim-dap" },
   {
     "rcarriga/nvim-dap-ui",
-    dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
+    dependencies = {
+      "mfussenegger/nvim-dap",
+      "nvim-neotest/nvim-nio",
+    },
     opts = {},
     config = function(_, opts)
       local dap = require("dap")
@@ -23,7 +25,10 @@ return {
   },
   {
     "jay-babu/mason-nvim-dap.nvim",
-    dependencies = { "williamboman/mason.nvim", "mfussenegger/nvim-dap" },
+    dependencies = {
+      "williamboman/mason.nvim",
+      "mfussenegger/nvim-dap",
+    },
     opts = {
       ensure_installed = { "codelldb" },
       handlers = {

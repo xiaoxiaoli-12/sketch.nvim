@@ -27,6 +27,7 @@ return {
       },
     },
     keys = {
+      { "<leader>z", function() Snacks.zen.zoom() end, desc = "Toggle Zoom" },
       { "<leader>ff", function() Snacks.picker.files() end, desc = "Find files" },
       { "<leader>fg", function() Snacks.picker.grep() end, desc = "Grep" },
       { "<leader>fb", function() Snacks.picker.buffers() end, desc = "Buffers" },

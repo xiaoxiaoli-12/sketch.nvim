@@ -13,7 +13,7 @@ return {
       },
     },
     opts = {
-      keymap = { preset = "default" },
+      keymap = { preset = "super-tab" },
       appearance = { use_nvim_cmp_as_default = true },
       fuzzy = { implementation = "lua" },
       sources = {
